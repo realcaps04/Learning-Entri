@@ -131,12 +131,12 @@
 
 //spread operator (.....spread) keeps the main array safe
 
-let orgArray = [1,2,3,4,5,6,7,8,9,10]
+// let orgArray = [1,2,3,4,5,6,7,8,9,10]
 
-let CopiedArray = [...orgArray]
+// let CopiedArray = [...orgArray]
 
-CopiedArray[0] = 0
+// CopiedArray[0] = 0
 
-console.log(orgArray);
-console.log(CopiedArray);
+// console.log(orgArray);
+// console.log(CopiedArray);
 
