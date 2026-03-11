@@ -14,3 +14,29 @@ create a file server.js for writing codes related to a server
 // if nodemon doesnt work instead of node server.js use npm start for better working
 
 
+{
+  "name": "backend", // name of the project
+  "version": "1.0.0",// version of the project
+  "description": "", // description of the project
+  "main": "index.js",// project run cheyumbol e file ayirikum athyam load cheyunne  by some one 
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1", //custom commands mainely automation 
+
+    "start": "nodemon server.js" // start command run cheyumbol nodemon server.js command execute cheyunne,
+    //  nodemon is a tool that helps develop node.js based applications by automatically restarting the 
+    // node application when file changes in the directory are detected.
+  },
+  "keywords": [],// keywords for the project, helps in searchability
+  "author": "", // author of the project
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1", version of express
+    "nodemon": "^3.1.14" verson of nodemon 
+  }
+}
+
+// most important file in the project, it contains all the dependencies and scripts to run the project. 
+// It also contains the version of the project and other metadata.
+
+//npm - node package manager    like playstore  
