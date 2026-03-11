@@ -8,3 +8,9 @@ npm install express (helps to install node modules)
  projectlekk express.js install akkan use akkane command
 
 create a file server.js for writing codes related to a server
+
+
+
+// if nodemon doesnt work instead of node server.js use npm start for better working
+
+
