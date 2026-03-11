@@ -1,0 +1,10 @@
+user-React(Front-end)//Express.js(Backend)//MongoDB(Database)
+
+//initializing express js in a Folder
+
+npm ini -y
+
+npm install express (helps to install node modules)
+ projectlekk express.js install akkan use akkane command
+
+create a file server.js for writing codes related to a server

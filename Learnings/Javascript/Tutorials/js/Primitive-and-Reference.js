@@ -9,7 +9,7 @@
         name1 = "Biju"
 
         console.log(name1);
-        console.log(name2); //name2 is still Edison because it is a copy of name1
+        console.log(name2); //name2 is still Edison because it is a copy of name1 // seperate location memory so memory is saved 
 
 
 
@@ -32,5 +32,5 @@
 
 
         //Objectinte copy yedukumbam just reference anu actual copy alla yedukkunne so intial copy proper aytt store akunella so value change akum 
-
+        // same location memory so memory is not saved but primitive datatype copy timeil anu copy akunnath so separate location memory save akum
         
