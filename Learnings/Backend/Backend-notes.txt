@@ -40,3 +40,14 @@ create a file server.js for writing codes related to a server
 // It also contains the version of the project and other metadata.
 
 //npm - node package manager    like playstore  
+
+
+------------------------Node JS------------------------------------
+
+
+Javascript run time enviorment
+Works on Googles V8 Engine
+
+Ryan Dahl Developed Node JS 
+
+
