@@ -1,8 +1,23 @@
 const express = require('express'); // express module importing to the project
 const app = express() // creating an instance of express
+const Eventemitter = require('events') // importing the events module to create an event emitter
+
+
+const emitter = new Eventemitter() // creating an instance of event emitter
+
+emitter.on("page visited", (url)=>{
+    console.log("User visited the page",url);
+    
+})
+
+//emitter has two methods, one is on and the other is emit. 
+// on method is used to listen to an event and emit method is used to emit an event.
 
 app.get('/', (req, res) => { // slash is the route, req is the request object and res is the response object
     res.send('Hello World!') // sending a response to the client as hello world
+
+    emitter.emit("page visited", req.originalUrl) // emitting the event when the user visits the page and 
+                                                  // passing the original url of the request as an argument to the event listener
 })
 
 //user side varunnath req anu and server side varunnath res anu
@@ -50,6 +65,11 @@ app.listen(PORT,()=>{
 
 
 // Basic Server intialization completed
+
+
+//-------------------------req.OriginalUrl-----------------------------
+
+//------ this will give the original url of the request made by the client--------
 
 
 
