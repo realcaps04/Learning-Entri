@@ -237,3 +237,34 @@ app.post('/login', loginmaster) // using the loginmaster function as a callback 
 
 // checks username from DB
 
+
+
+
+
+//common response methodes
+
+//res.send() method is used to send a response to the client, it can send a string, an object, an array etc.
+//  and it automatically sets the content type of the response based on the type of data sent
+
+//res.json() method is used to send a json response to the client,
+//  it automatically converts the object or array to json format and sets the content type of the response
+//  to application/json
+
+//res.end() method is used to end the response, it is used when we want to send a response in multiple parts,
+//  like when we want to send a response in chunks, 
+// we can use res.write() method to send the response in chunks and then use res.end() method to end the response
+
+//res.write() method is used to send a response in chunks, 
+// it is used when we want to send a response in multiple parts, 
+// like when we want to send a response in chunks, we can use res.write() method to send the response in chunks and 
+// then use res.end() method to end the response
+
+//res.status() method is used to set the status code of the response, 
+// it is used when we want to send a response with a specific status code, 
+// like when we want to send a response with a 404 status code, 
+// we can use res.status(404) method to set the status code of the response to 404
+
+//res.redirect() method is used to redirect the client to a specific route, 
+// it is used when we want to redirect the client to a specific route, 
+// like when we want to redirect the client to the home page after a successful login, 
+// we can use res.redirect('/home') method to redirect the client to the home page
