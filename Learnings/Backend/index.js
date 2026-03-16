@@ -178,7 +178,8 @@ app.listen(PORT,()=>{
 
 
 
-//-------HTTP Methods------------------
+//-------------------------------------------HTTP Methods-------------------------------------
+//---------------------------------------------ROUTING----------------------------------------
 
 //http methods are used to specify the type of request made by the client to the server, 
 // like GET, POST, PUT, DELETE, PATCH etc.
@@ -205,3 +206,34 @@ app.listen(PORT,()=>{
 
 
 //example update only age field of the user profile using patch method
+
+
+
+app.get('/ooh', (req, res) => { // slash is the route, req is the request object and res is the response object
+    res.send('Ooh page is loaded') // sending a response to the client as ooh page is loaded
+})
+
+
+
+app.get('/login', (req, res) => { // slash is the route, req is the request object and res is the response object
+    res.send('Login page is loaded') // sending a response to the client as login page is loaded
+})
+app.patch('/ooh', (req, res) => { // slash is the route, req is the request object and res is the response object
+    res.send('Ooh page is loaded') // sending a response to the client as ooh page is loaded
+})
+
+
+app.post('/login', (req, res) => { // slash is the route, req is the request object and res is the response object
+    res.send('Login page is loaded') // sending a response to the client as login page is loaded
+})
+
+function loginmaster() {
+console.log("login called");
+
+}
+
+app.post('/login', loginmaster) // using the loginmaster function as a callback function for the post method of the login route
+
+
+// checks username from DB
+
