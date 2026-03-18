@@ -1,23 +1,24 @@
-const express = require('express'); // express module importing to the project
+// const express = require('express'); // express module importing to the project
 const app = express() // creating an instance of express
-const Eventemitter = require('events') // importing the events module to create an event emitter
+// const Eventemitter = require('events') // importing the events module to create an event emitter
+
+import userRouter from './routes/UserRoutes.js' // importing the user router from the routes folder
 
 
-const emitter = new Eventemitter() // creating an instance of event emitter
+// const emitter = new Eventemitter() // creating an instance of event emitter
 
-const os = require('os') // importing the os module to get the operating system information
+// const os = require('os') // importing the os module to get the operating system information
 
-emitter.on("page visited", (url)=>{
-    console.log("User visited the page",url);
+// emitter.on("page visited", (url)=>{
+//     console.log("User visited the page",url);
     
-})
+// })
 
-// import express from 'express' // using ES6 module syntax to import express module
-// import Eventemitter from 'events' // using ES6 module syntax to import events module
-
+import express from 'express' // using ES6 module syntax to import express module
+import Eventemitter from 'events' // using ES6 module syntax to import events module
 // 1. FS
-// import fs from 'fs'
-// import { json } from 'stream/consumers';
+import fs from 'fs'
+import { json } from 'stream/consumers';
 
 
 //files creation using fs module, when the user visits the page, we can write the data to a file using the fs module
@@ -48,12 +49,12 @@ emitter.on("page visited", (url)=>{
 //emitter has two methods, one is on and the other is emit. 
 // on method is used to listen to an event and emit method is used to emit an event.
 
-app.get('/', (req, res) => { // slash is the route, req is the request object and res is the response object
-    res.send('Hello World!') // sending a response to the client as hello world
+// app.get('/', (req, res) => { // slash is the route, req is the request object and res is the response object
+//     res.send('Hello World!') // sending a response to the client as hello world
 
-//     emitter.emit("page visited", req.originalUrl) // emitting the event when the user visits the page and 
-//                                                   // passing the original url of the request as an argument to the event listener
-})
+// //     emitter.emit("page visited", req.originalUrl) // emitting the event when the user visits the page and 
+// //                                                   // passing the original url of the request as an argument to the event listener
+// })
 
 //     fs.writeFile('user.json', userData, (err) => { 
 //     // writing the json data to a file named user.json
@@ -80,30 +81,26 @@ app.get('/', (req, res) => { // slash is the route, req is the request object an
 
 //user side varunnath req anu and server side varunnath res anu
 
-app.get('/about', (req, res) => { // slash is the route, req is the request object and res is the response object
-    res.send('About page is loaded') // sending a response to the client as about page is loaded
-})
+// app.get('/about', (req, res) => { // slash is the route, req is the request object and res is the response object
+//     res.send('About page is loaded') // sending a response to the client as about page is loaded
+// })
 //next mentioning a port
 
 
 
-app.get('/home', (req, res) => { // slash is the route, req is the request object and res is the response object
-    res.send('Home page is loaded') // sending a response to the client as home page is loaded
-})
+// app.get('/home', (req, res) => { // slash is the route, req is the request object and res is the response object
+//     res.send('Home page is loaded') // sending a response to the client as home page is loaded
+// })
 
-app.get('/ok', (req, res) => { // slash is the route, req is the request object and res is the response object
-    res.send('Ok page is loaded') // sending a response to the client as ok page is loaded
-})
+// app.get('/ok', (req, res) => { // slash is the route, req is the request object and res is the response object
+//     res.send('Ok page is loaded') // sending a response to the client as ok page is loaded
+// })
 
 
 
 const PORT = 3000; // defining a port number for the server to listen on
 
-app.listen(PORT,()=>{
-    console.log(`server is running at port: http://localhost:${PORT} `)  //dont use ' or '' in the console log for port running 
-    //message showing ,  use http not https in the url
-    
-})
+
 
 
 //use control+C for again restartng the server and then use node server.js for running the server again
@@ -268,3 +265,31 @@ app.post('/login', loginmaster) // using the loginmaster function as a callback 
 // it is used when we want to redirect the client to a specific route, 
 // like when we want to redirect the client to the home page after a successful login, 
 // we can use res.redirect('/home') method to redirect the client to the home page
+
+
+
+
+// What are Routes?
+
+// Routes are the endpoints of the server that handle the requests made by the client,
+
+
+
+// Difference btw import and require?
+
+// import is used in ES6 module syntax to import a module, 
+// it is used when we want to use the ES6 module syntax in our code, 
+// and it is not supported in CommonJS module syntax
+
+// require is used in CommonJS module syntax to import a module,
+
+
+
+app.use('/',userRouter)
+
+
+app.listen(PORT,()=>{
+    console.log(`server is running at port: http://localhost:${PORT} `)  //dont use ' or '' in the console log for port running 
+    //message showing ,  use http not https in the url
+    
+})  
