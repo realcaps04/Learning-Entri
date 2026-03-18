@@ -286,6 +286,7 @@ app.post('/login', loginmaster) // using the loginmaster function as a callback 
 
 
 app.use('/',userRouter)
+app.use('/admin',adminRouter) // using the admin router for the admin routes, so when the user visits the /admin route, it will be handled by the admin router
 
 
 app.listen(PORT,()=>{
@@ -293,3 +294,7 @@ app.listen(PORT,()=>{
     //message showing ,  use http not https in the url
     
 })  
+
+
+
+import adminRouter from './routes/AdminRouter.js' // importing the admin router from the routes folder

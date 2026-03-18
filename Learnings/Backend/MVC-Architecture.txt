@@ -1,0 +1,22 @@
+## MVC Architecture - Simple Note + Chart ✅
+
+### 1) MVC in 4 steps
+1. **Model** = data and business rules (database, validation).  
+2. **View** = what user sees (HTML/template).  
+3. **Controller** = handles input, updates model, returns view.  
+4. **Flow**: User → Controller → Model → View → User.
+
+### 2) Quick analogy
+- Model = “inventory backend”
+- View = “screen”
+- Controller = “cashier”
+
+### 3) Simple Mermaid chart
+```mermaid
+flowchart LR
+    User -->|Request| Controller
+    Controller -->|Read/Write| Model
+    Model -->|Data| Controller
+    Controller -->|Render| View
+    View -->|HTML| User
+```
