@@ -20,3 +20,35 @@ flowchart LR
     Controller -->|Render| View
     View -->|HTML| User
 ```
+
+
+-----------Simple MVC Flowchart-------------
+
+    Client -->|HTTP Request| Route
+    Route -->|calls| Controller
+    Controller -->|queries/updates| Model
+    Model -->|returns data| Controller
+    Controller -->|renders/returns| View
+    View -->|HTML/JSON| Client
+
+
+
+
+
+----------## `app.use(...)` in Express — What it’s for --------
+
+- `app.use(express.json())` → parse JSON body
+- `app.use(express.urlencoded({ extended: true }))` → parse form data
+- `app.use('/users', userRoutes)` → mount route module
+- `app.use((req, res, next) => {...})` → middleware (logging, auth, error handling)
+- `app.use((err, req, res, next) => {...})` → error-handling middleware
+
+### In MVC context:
+- Use `app.use('/api', routeModule)` as controller entry point.
+- Use middleware for cross-cutting logic (auth, validation, CORS).
+- Use static files with `app.use(express.static('public'))`.
+
+> In short: `app.use` registers middleware and routers in Express, making MVC flow work cleanly.
+
+
+--------------------------------------------------------------------
